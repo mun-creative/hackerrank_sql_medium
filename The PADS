@@ -9,3 +9,10 @@ where [occupation_count] is the number of occurrences of an occupation in OCCUPA
 
 Note: There will be at least two entries in the table for each type of occupation.
 */
+
+
+select name || '(' || substr(occupation,0,1) || ')'  as n from occupations order by n ;
+
+select 'There are a total of ' || count(occupation) || ' ' ||  lower(occupation) || 's.' from occupations
+group by occupation
+order by count(occupation), occupation;
